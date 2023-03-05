@@ -2,7 +2,7 @@ html {
     scroll-behavior: smooth;
 }
 h1,h2,h4,p,td,a {
-  font-family: 'Shantell Sans', cursive;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
 .container-fluid {
@@ -59,7 +59,8 @@ img {
     background-position: center;
     position: relative;
 }
-.header {font-family: 'Shantell Sans', cursive;
+.header {
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
     position: relative;
     top: 50%;
