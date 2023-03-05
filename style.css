@@ -1,0 +1,126 @@
+html {
+    scroll-behavior: smooth;
+}
+h1,h2,h4,p,td,a {
+  font-family: 'Shantell Sans', cursive;
+  font-size: 16px;
+}
+.container-fluid {
+    background-color: #383838;
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+}
+img {
+    border: 4px solid white;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(17,17,17,0.2);
+}
+.thumbnail {
+    margin: 4%;
+}
+.col.main {
+    background-color: whitesmoke;
+    box-shadow: 0 0 50px rgba(17,17,17,0.5);
+}
+
+.row.section
+{
+  padding: 5%;
+}
+
+.row.section1 {
+  padding-left:50px;
+  padding-right: 50px;
+  padding-top: 80px;
+  padding-bottom: 10px;
+}
+.row.section2 {
+  padding-left:50px;
+  padding-right: 50px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.navbar {
+    box-shadow: 0px 4px 8px rgba(17,17,17,0.2);
+}
+.navbar-brand {
+    font-weight: bold;
+    padding-left: 12%;
+}
+#home {
+    padding-left:25%;
+    padding-right: 25%;
+    padding-top: 30%;
+    padding-bottom: 25%;
+    background-image: url("bd.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+.header {font-family: 'Shantell Sans', cursive;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: white;
+    text-shadow: 0 2px 8px rgba(17,17,17,0.6);
+}
+#contact {
+    background-image: radial-gradient(#404040, #202020);
+}
+
+
+.type {
+  display:inline-block;
+  vertical-align: bottom;
+}
+.type > span {
+  color: white;
+  display:grid;
+  overflow: hidden;
+  height:2em;
+}
+.type span span {
+  width:0%;
+  max-width:max-content;
+  overflow: hidden;
+  height:inherit;
+  word-break:break-all;
+  animation:
+    c 0.5s infinite steps(1),
+    t 2s linear infinite alternate,
+    m 16s steps(4) infinite;
+}
+.type span span:before {
+  content:” “;
+  display:inline-block;
+}
+@keyframes t{
+  90%,100% {width:100%}
+}
+@keyframes c{
+  0%,100%{box-shadow:5px 0 0 #0000}
+  50%    {box-shadow:5px 0 0 white}
+}
+@keyframes m{
+  100% {transform:translateY(-400%)}
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+.button:hover {
+  background-color: #555;
+}
+
