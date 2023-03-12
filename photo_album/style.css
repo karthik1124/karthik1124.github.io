@@ -1,0 +1,111 @@
+h1,p{
+    font-family: 'Comic Neue', cursive;
+}
+.title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+@media (min-aspect-ratio:16/9){
+    #vid{
+        width:100%;
+        height:auto;
+    }
+}
+@media (max-aspect-ratio:16/9){
+    #vid{
+        width:100%;
+        height:auto;
+    }
+}
+@media (max-width:767px){
+    #vid,.subtitle{
+        display:none;
+    }
+    .title{
+        top: 10%;
+        left: 50%;
+    }
+}
+/*images*/
+.photo {
+    margin:10px;
+    max-width: 100%;
+    height: auto;
+    transition: transform .2s;
+    border: 2px solid #000000; 
+    border-radius: 4px;  
+}
+
+.photo:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #000000;
+}
+
+figcaption{
+    text-align:center;
+}
+figure{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.btn:focus { 
+    box-shadow: none;
+}
+button{
+    opacity:0.5;
+}
+button:hover{
+    opacity:1;
+}
+
+
+.grid-wrap{
+    line-height: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); /*280*/
+    grid-template-rows: auto 1fr auto;
+}
+.grid-wrap .item {
+    overflow: hidden;
+    display:none;
+}
+
+.grid-wrap .item .tools {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    transition: 0.5s;
+}
+.grid-wrap .item .tools{
+    display: block;
+    transition: 0.3s;
+}
+.grid-wrap img {
+    object-fit: cover;
+    object-position: center;
+}
+.grid-wrap .show {
+display:block;
+animation: enter .3s forwards;
+}
+@keyframes enter{
+    0%{
+        transform: scale(.2,.2);
+    }
+    100%{
+        transform: scale(1,1);
+        
+    }
+}
+
+.subnav-content {
+display: none;
+}
+.subnav:hover .subnav-content {
+display: block;
+}
