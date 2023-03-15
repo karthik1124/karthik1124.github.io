@@ -2,15 +2,14 @@
 <html>
 <head>
 	<title>Tic Tac Toe</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
 	<link rel = "icon" href = "imgs/f.png" type = "image/x-icon">
 </head>
 <body>
-	
-	<div class="backwrap gradient">
+	<div class="backwrap">
 		<div class="back-shapes">
 			<span class="floating circle" style="top:66.59856996935649%;left:13.020833333333334%;animation-delay:-0.9s;"></span>
 			<span class="floating triangle" style="top:31.46067415730337%;left:33.59375%;animation-delay:-4.8s;"></span>
@@ -47,29 +46,37 @@
 		</div>
 	  </div>
 
-	<header class="viewport">
+
 	<h1>Tic-Tac-Toe</h1>
-	</header>
-	
-	<div class="tableGame">
-		<table>
-			<tr>
-				<td id="0"></td> <td id="1"></td> <td id="2"></td>
-			</tr>
-			<tr> 
-				<td id="3"></td> <td id="4"></td> <td id="5"></td>
-			</tr>
-			<tr> 
-				<td id = "6"></td> <td id="7"></td> <td id = "8"></td>
-			</tr>
-		</table>
+
+	<div class="game-area">
+		
+		<div class="game-options">
+			
+			<select name="game_type" id="game_type" onchange="resetAIButton()">
+				<option value="3">3 x 3</option>
+				<option value="4">4 x 4</option>
+				<option value="5">5 x 5</option>
+			</select>
+
+			<form>
+				<div class="form-check">
+				  <input type="checkbox" name="robot" checked="true" id="robot" class="form-check-input"/>
+				  <label class="form-check-label" for="anime">Computer</label>
+				</div>
+			</form>		    
+			
+			<input type="submit" value="Start Game" onclick="generateGame()" class="submit-button"> 
+
+			<div class="score-card">
+				Player X's score: <span id="score-X">0</span> &nbsp;
+				Player Y's score: <span id="score-Y">0</span>
+			</div>
+		</div>
+		<div id="game-board" class="game-board"></div>
+	    
 	</div>
-	<div class="buttonGame">
-		<button class="v1" id="1vs1"> <strong> 1 VS 1 </strong></button>
-		<button class="com" id="computer"> <strong> Computer <strong></button> 
-		<button class="res" id="reset"> <strong> Reset </strong></button>
-	</div>
 	
-	<script type="text/javascript", src="script.js"></script>
+	<script type="text/javascript" src="scripts.js"></script>
 </body>
 </html>
