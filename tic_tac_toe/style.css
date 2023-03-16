@@ -1,13 +1,10 @@
 body {
 	font-family: 'Open Sans', sans-serif;
     background-image: linear-gradient(to right, #DECBA4, #3E5151);
-	/*  #E2D1F9, #317773*/
   }
   
 h1{
-	font-family: 'Open Sans', sans-serif;
-	font-size: 60px;
-	margin: 2px auto 2px auto;
+	font-size:5vw;
 	text-align: center;
 	color:#000000;
 }
@@ -41,7 +38,6 @@ h1{
 
 .grid-box, .player1, .player2 {
 	font-size: 35px;
-	padding: 15px 25px;
 	width: 80px;
 	height: 80px;
 	background-color: transparent;
@@ -57,26 +53,39 @@ h1{
 }
 
 .score-card {
-    padding-top: 5%;
-    padding-bottom: 5%;
 	font-weight: bold;
 }
 .score-card span {
 	font-weight: normal;
 }
 
-.form-check{
-	padding: 10px 10px 5px;
-}
-
 .game-area{
     position: relative;
-    height:80vh; 
+    height:50vh; 
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.game-options{
+    position: relative;
+    height:30vh; 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     flex-direction: column;
 }
 
-
+@media only screen and (max-width: 1000px) {
+	.game-area{
+		height:80vh; 
+	    flex-direction: column;
+	}
+	.score-card,h1{
+		height: 8vh;
+	}
+	
+  }

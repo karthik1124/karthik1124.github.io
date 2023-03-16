@@ -13,27 +13,26 @@
 	<h1>Tic-Tac-Toe</h1>
 
 	<div class="game-area">
-		
+		<div></div>
+
 		<div class="game-options">
-			
-			<select name="game_type" id="game_type" onchange="resetAIButton()">
-				<option value="3">3 x 3</option>
-				<option value="4">4 x 4</option>
-				<option value="5">5 x 5</option>
-			</select>
-
-			<form>
-				<div class="form-check">
-				  <input type="checkbox" name="robot" checked="true" id="robot" class="form-check-input"/>
-				  <label class="form-check-label" for="anime">Computer</label>
-				</div>
-			</form>		    
-			
-			<input type="submit" value="Start Game" onclick="generateGame()" class="submit-button"> 
-
+			<div>
+				<select name="game_type" id="game_type" onchange="resetAIButton()">
+					<option value="3">3 x 3</option>
+					<option value="4">4 x 4</option>
+					<option value="5">5 x 5</option>
+				</select>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" name="robot" checked="true" id="robot" class="form-check-input"/> 
+				<label class="form-check-label" for="anime"> AI </label>
+			</div>
+			<div>
+				<input type="submit" value="Start" onclick="generateGame()" class="submit-button"> 
+				<input type="submit" value="Reset" onclick="generateGame()" class="submit-button">
+		    </div>
 			<div class="score-card">
-				Player X's score: <span id="score-X">0</span> &nbsp;
-				Player Y's score: <span id="score-Y">0</span>
+				X's score: <span id="score-X">0</span> &nbsp;
+				Y's score: <span id="score-Y">0</span>
 			</div>
 		</div>
 		<div id="game-board" class="game-board"></div>
