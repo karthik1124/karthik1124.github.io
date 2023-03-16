@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel = "icon" href = "imgs/f.png" type = "image/x-icon">
 </head>
@@ -24,6 +25,7 @@
         </div>        
     </div>
     <br>
+    <div id="avatars-container"></div>
     <div class="container">
         
         <div id="myBtnContainer">
@@ -35,7 +37,7 @@
             <button class="btn" onclick="filterSelection('v')"> Anti-heroes</button> 
             
             <div class="subnav">
-                <button class="btn">Operations <i class="fa fa-caret-down"></i></button>
+                <button class="btn">Operations </button>
                 <div class="subnav-content">
                     <button class="btn" onclick="img_bright()">Brightness</button>
                     <button class="btn" onclick="img_blur()">Blur</button>
@@ -45,6 +47,14 @@
                     <button class="btn" onclick="img_opacity()">Opacity</button>
                     <button class="btn" onclick="img_saturate()">Saturate</button>
                     <button class="btn" onclick="img_sepia()">Sepia</button>
+                    <button class="btn" onclick="img_red()">Reddish</button>
+                    <button class="btn" onclick="img_green()">Greenish</button>
+                    <button class="btn" onclick="img_blue()">Bluish</button>
+                    <button class="btn" onclick="img_qr()">QR Code</button>
+                    <button class="btn" onclick="img_dup()">Duplicate</button>
+                    <button class="btn" onclick="img_avatar()">Avatar</button>
+                    <button class="btn" onclick="window.location.reload()">Reset</button>
+
                 </div>
             </div>
         </div>

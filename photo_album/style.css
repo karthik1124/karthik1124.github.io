@@ -62,6 +62,13 @@ button:hover{
     opacity:1;
 }
 
+.subnav-content {
+    display: none;
+    }
+    .subnav:hover .subnav-content {
+    display: block;
+    }
+
 
 .grid-wrap{
     line-height: 1;
@@ -103,9 +110,3 @@ animation: enter .3s forwards;
     }
 }
 
-.subnav-content {
-display: none;
-}
-.subnav:hover .subnav-content {
-display: block;
-}

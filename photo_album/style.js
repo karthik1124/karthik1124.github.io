@@ -97,7 +97,8 @@ function img_saturate() {
 function img_sepia() {
   unfilter();
   var image = document.querySelectorAll("img");
-  for (let i =0; i<image.length;i++){ image[i].style.filter="sepia(1)"; };
+  for (let i =0; i<image.length;i++){ 
+    image[i].style.filter="sepia(1)"; };
 }
 
 function un_op_filter() {
@@ -116,3 +117,114 @@ function un_op_filter() {
 }
 
 
+function img_red() {
+  unfilter();
+  var images = document.querySelectorAll("img");
+  changered(images)
+}
+function img_green() {
+  unfilter();
+  var images = document.querySelectorAll("img");
+  changegreen(images)
+}
+
+function img_blue() {
+  unfilter();
+  var images = document.querySelectorAll("img");
+  changeblue(images)
+}
+
+
+function changered(images) 
+{ 
+  for (let i = 0; i < images.length; i++) 
+  { 
+    const canvas = document.createElement('canvas'); 
+    const context = canvas.getContext('2d'); 
+    canvas.width = images[i].width; 
+    canvas.height = images[i].height; 
+    context.drawImage(images[i], 0, 0,canvas.width, canvas.height); 
+    const imagedata = context.getImageData(0, 0, canvas.width, canvas.height); 
+    const data = imagedata.data; 
+    for (let j = 0; j < data.length; j += 4) 
+    { 
+      data[j] = data[j]+data[j+1]+data[j+2]; 
+
+    } 
+    context.putImageData(imagedata, 0, 0); 
+    images[i].src = canvas.toDataURL(); 
+  } 
+}
+function changegreen(images) 
+{ 
+  for (let i = 0; i < images.length; i++) 
+  { 
+    const canvas = document.createElement('canvas'); 
+    const context = canvas.getContext('2d'); 
+    canvas.width = images[i].width; 
+    canvas.height = images[i].height; 
+    context.drawImage(images[i], 0, 0, canvas.width, canvas.height); 
+    const imagedata = context.getImageData(0, 0, canvas.width, canvas.height); 
+    const data = imagedata.data; 
+    for (let j = 0; j < data.length; j += 4) 
+    { data[j+1] = data[j]+data[j+1]+data[j+2]; 
+    } 
+    context.putImageData(imagedata, 0, 0); 
+    images[i].src = canvas.toDataURL(); 
+  } 
+}
+function changeblue(images) 
+{ 
+  for (let i = 0; i < images.length; i++) 
+  { 
+    const canvas = document.createElement('canvas'); 
+    const context = canvas.getContext('2d'); 
+    canvas.width = images[i].width; 
+    canvas.height = images[i].height; 
+    context.drawImage(images[i],0,0, canvas.width, canvas.height); 
+    const imagedata = context.getImageData(0,0, canvas.width, canvas.height); 
+    const data = imagedata.data; 
+    for (let j = 0; j < data.length; j += 4) 
+    { data[j+2] = data[j]+data[j+1]+data[j+2]; 
+    } 
+    context.putImageData(imagedata, 0, 0); 
+    images[i].src = canvas.toDataURL(); 
+  } 
+}
+
+function img_qr() {
+  var images = document.querySelectorAll('.photo');
+  for (var i = 0; i < images.length; i++) {
+    var img = images[i];
+    var qr = new QRCode(img, {
+      text: img.src,
+      width: 200,
+      height: 200,
+    });
+  img.src = qr._el.childNodes[0].toDataURL();
+  }
+}
+
+function img_dup() {
+  var images = document.querySelectorAll("img");
+  for (let i = 0; i < images.length; i++) 
+  {
+    const currentImage = images[i];
+    const newImage = document.createElement('img');
+    newImage.src = currentImage.src;
+    newImage.width=200;
+    newImage.height=400;
+    const galleryContainer = document.querySelector('.grid-wrap');
+    galleryContainer.appendChild(newImage);
+    
+  }
+}
+
+function img_avatar() {
+  var image = document.querySelectorAll("img");
+  for (let i =0; i<image.length;i++){ 
+    image[i].style.borderRadius="50%";
+    image[i].style.width="70%"; 
+    image[i].style.height="70%";
+  };
+}
